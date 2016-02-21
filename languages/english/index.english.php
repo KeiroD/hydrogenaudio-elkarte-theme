@@ -132,6 +132,7 @@ $txt['forum_index'] = '%1$s - Index';
 $txt['board_name'] = 'Board name';
 $txt['posts'] = 'Posts';
 
+$txt['member_joined'] = 'Joined';
 $txt['member_postcount'] = 'Posts';
 $txt['no_subject'] = '(No subject)';
 $txt['view_profile'] = 'View Profile';

@@ -2,7 +2,7 @@
 // Version: 1.0; MaillistTemplates
 
 // Do not translate anything that is between {}, they are used as replacement variables and MUST remain exactly how they are.
-// 		Additionally do not translate the @additioinal_params: line or the variable names in the lines that follow it.  You may
+// 		Additionally do not translate the @additional_params: line or the variable names in the lines that follow it.  You may
 //		translate the description of the variable.
 //		Do not translate @description:, however you may translate the rest of that line.
 
@@ -17,7 +17,7 @@
 		SIGNATURE: The signature of the member who made the post
 		UNSUBSCRIBELINK: Link to unsubscribe from notifications.
 		EMAILREGARDS: The site name signature
-	@description: A memeber wants to be notified of new topics on a board they are watching
+	@description: A member wants to be notified of new topics on a board they are watching
 */
 $txt['pbe_notify_boards_once_body_subject'] = '[{FORUMNAMESHORT}] {TOPICSUBJECT}';
 $txt['pbe_notify_boards_once_body_body'] = 'A new topic, \'{TOPICSUBJECT}\', has been started in \'{BOARDNAME}\'.
@@ -138,7 +138,7 @@ You can reply to this email and have it posted as a topic reply.
 		BOARDNAME: Name of the board the post was made in
 		SIGNATURE: The signature of the member who made the post
 		EMAILREGARDS: The site name signature
-	@description: Full body email notifcation for the first new reply in a topic
+	@description: Full body email notification for the first new reply in a topic
 */
 $txt['pbe_notification_reply_body_once_subject'] = 'Re: [{FORUMNAMESHORT}] {TOPICSUBJECT}';
 $txt['pbe_notification_reply_body_once_body'] = '

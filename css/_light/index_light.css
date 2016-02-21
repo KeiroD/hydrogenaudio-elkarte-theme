@@ -214,7 +214,7 @@ strong {
 	background: #5176b5;
 	background-image: linear-gradient(to bottom, #618dd9, #4f73b0);
 	color: #fff;
-	text-shadow: 1px 1px 0 #112;
+	text-shadow: 1px 1px 1px hsla(0,0%,0%,0.3);
 }
 /* Single ones a bit darker than board index ones. */
 .forumposts .category_header, .content_category .category_header {
@@ -1483,6 +1483,7 @@ div.bbc_footnotes .meaction{
 
 .topic_details {
 	border-bottom: 1px solid #999;
+	background: #A0BCEF;
 }
 
 .ignoreboards a {

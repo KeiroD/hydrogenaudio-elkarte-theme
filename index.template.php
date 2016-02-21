@@ -173,8 +173,8 @@ function template_html_above()
 	// If RSS feeds are enabled, advertise the presence of one.
 	if (!empty($context['newsfeed_urls']))
 		echo '
-	<link rel="alternate" type="application/rss+xml" title="', $context['forum_name_html_safe'], ' - ', $txt['rss'], '" href="', $context['newsfeed_urls']['rss'], '" />
-	<link rel="alternate" type="application/rss+xml" title="', $context['forum_name_html_safe'], ' - ', $txt['atom'], '" href="', $context['newsfeed_urls']['atom'], '" />';
+	<link rel="alternate" type="application/rss+xml" title="', $context['forum_name_html_safe'], ' - ', (!empty($context['current_board']) ? $context['page_title_html_safe'] . ' - ' : ''), $txt['rss'], '" href="', $context['newsfeed_urls']['rss'], '" />
+	<link rel="alternate" type="application/rss+xml" title="', $context['forum_name_html_safe'], ' - ', (!empty($context['current_board']) ? $context['page_title_html_safe'] . ' - ' : ''), $txt['atom'], '" href="', $context['newsfeed_urls']['atom'], '" />';
 
 	// If we're viewing a topic, these should be the previous and next topics, respectively.
 	if (!empty($context['links']['next']))
@@ -319,6 +319,20 @@ function template_th_search_bar()
 {
 	global $context, $modSettings, $txt, $scripturl;
 
+	$board_list = array();
+	if (!empty($context['current_board']))
+	{
+		if (empty($context['current_boards']))
+		{
+			require_once(SUBSDIR . '/Boards.subs.php');
+			$board_list[] = $context['current_board'];
+			addChildBoards($board_list);
+			$context['current_boards'] = $board_list;
+		}
+		else
+			$board_list = $context['current_boards'];
+	}
+
 	echo '
 			<form id="search_form" action="', $scripturl, '?action=search;sa=results" method="post" accept-charset="UTF-8">
 				<label for="quicksearch">
@@ -362,8 +376,17 @@ function template_th_search_bar()
 				<input type="hidden" name="', (!empty($modSettings['search_dropdown']) ? 'sd_topic' : 'topic'), '" value="', $context['current_topic'], '" />';
 	// If we're on a certain board, limit it to this board ;).
 	elseif (!empty($context['current_board']))
-		echo '
+	{
+		if (count($board_list))
+		{
+			foreach($board_list as $board)
+				echo '
+				<input type="hidden" name="', (!empty($modSettings['search_dropdown']) ? 'sd_brd[' : 'brd['), $board, ']"', ' value="', $board, '" />';
+		}
+		else
+			echo '
 				<input type="hidden" name="', (!empty($modSettings['search_dropdown']) ? 'sd_brd[' : 'brd['), $context['current_board'], ']"', ' value="', $context['current_board'], '" />';
+	}
 
 	echo '
 				<input type="submit" name="search;sa=results" value="', $txt['search'], '" class="button_submit', (!empty($modSettings['search_dropdown'])) ? ' with_select' : '', '" />

@@ -4,7 +4,7 @@
 // Since all of these strings are being used in emails, numeric entities should be used.
 
 // Do not translate anything that is between {}, they are used as replacement variables and MUST remain exactly how they are.
-//   Additionally do not translate the @additioinal_parmas: line or the variable names in the lines that follow it.  You may
+//   Additionally do not translate the @additional_params: line or the variable names in the lines that follow it.  You may
 //   translate the description of the variable.  Do not translate @description:, however you may translate the rest of that line.
 
 // Do not use block comments in this file, they will have special meaning.

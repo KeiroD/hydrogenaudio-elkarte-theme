@@ -350,7 +350,7 @@ $txt['showPermissions_restricted_boards_desc'] = 'The following boards are not a
 $txt['local_time'] = 'Local Time';
 $txt['posts_per_day'] = 'per day';
 
-$txt['buddy_ignore_desc'] = 'This area allows you to maintain your buddy and ignore lists for this forum. Adding members to these lists will, amongst other things, help control mail and PM traffic, depending on your preferences.';
+$txt['buddy_ignore_desc'] = 'This area allows you to maintain your buddy and ignore lists for this forum. Adding members to these lists will, among other things, help control mail and PM traffic, depending on your preferences.';
 
 $txt['buddy_add'] = 'Add to buddy list';
 $txt['buddy_remove'] = 'Remove from buddy list';
