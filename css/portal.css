@@ -851,9 +851,7 @@ dl.sp_form img, #sp_add_articles_list_header img {
 		display: block;
 	}
 	#sp_left {
-		left: 0;
-		width: 100% !important;
-		display: block;
+		display: none;
 	}
 	#sp_center {
 		width: 100%;
